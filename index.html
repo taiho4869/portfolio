@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio CV - Hồ Văn Tài</title>
+    <title>Portfolio | Hồ Văn Tài</title>
 
+    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -20,388 +22,914 @@
         font-family: "Be Vietnam Pro", sans-serif;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        background: #f1f5f9;
-        color: #1e293b;
+        background: #f8fafc;
+        color: #0f172a;
         line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
       }
 
       .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 40px auto;
-        background: white;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        width: 92%;
+        max-width: 1280px;
+        margin: auto;
       }
 
-      .hero {
-        background: linear-gradient(135deg, #2563eb, #7c3aed, #c026d3);
-        color: white;
-        padding: 60px;
-      }
+      /* ===== NAVBAR ===== */
 
-      .hero-content {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        flex-wrap: wrap;
-      }
-
-      .avatar {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 5px solid white;
-        object-fit: cover;
-        background: white;
-      }
-
-      .hero-text h1 {
-        font-size: 48px;
-        margin-bottom: 10px;
-        font-weight: 800;
-      }
-
-      .hero-text h2 {
-        font-size: 22px;
-        font-weight: 400;
-        opacity: 0.95;
-        margin-bottom: 25px;
-      }
-
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        font-size: 15px;
-      }
-
-      section {
-        padding: 50px 60px;
-        border-bottom: 1px solid #e2e8f0;
-      }
-
-      .section-title {
-        font-size: 30px;
-        margin-bottom: 30px;
-        position: relative;
-        padding-left: 18px;
-        font-weight: 700;
-      }
-
-      .section-title::before {
-        content: "";
-        position: absolute;
-        left: 0;
+      nav {
+        position: fixed;
+        width: 100%;
         top: 0;
-        width: 6px;
-        height: 100%;
-        background: #2563eb;
-        border-radius: 20px;
+        left: 0;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
       }
 
-      .career-text {
-        color: #475569;
-        font-size: 17px;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-
-      .skill-card {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 18px;
-        padding: 24px;
-        transition: 0.3s;
-      }
-
-      .skill-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      .skill-card h3 {
-        margin-bottom: 10px;
-        color: #0f172a;
-        font-size: 20px;
-      }
-
-      .skill-card p {
-        color: #475569;
-      }
-
-      .projects {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      .project-card {
-        border-radius: 22px;
-        overflow: hidden;
-        border: 1px solid #e2e8f0;
-        transition: 0.3s;
-      }
-
-      .project-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.08);
-      }
-
-      .project-header {
-        padding: 28px;
-        color: white;
+      .nav-container {
+        height: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
       }
 
-      .blue {
-        background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      .logo {
+        font-size: 24px;
+        font-weight: 800;
+        color: #2563eb;
       }
 
-      .purple {
-        background: linear-gradient(135deg, #c026d3, #9333ea);
+      .nav-links {
+        display: flex;
+        gap: 35px;
       }
 
-      .orange {
-        background: linear-gradient(135deg, #f97316, #ef4444);
-      }
-
-      .project-header h3 {
-        font-size: 28px;
-        margin-bottom: 6px;
-      }
-
-      .date {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 10px 18px;
-        border-radius: 999px;
-        font-size: 14px;
-      }
-
-      .project-body {
-        padding: 30px;
-        background: white;
-      }
-
-      .project-body p {
-        margin-bottom: 16px;
+      .nav-links a {
         color: #334155;
+        font-weight: 500;
+        transition: 0.3s;
       }
 
-      .project-body ul {
-        padding-left: 22px;
+      .nav-links a:hover {
+        color: #2563eb;
+      }
+
+      /* ===== HERO ===== */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #dbeafe, #eff6ff, #f5f3ff);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(59, 130, 246, 0.25);
+        border-radius: 50%;
+        top: -150px;
+        right: -100px;
+        filter: blur(80px);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: rgba(168, 85, 247, 0.2);
+        border-radius: 50%;
+        bottom: -150px;
+        left: -100px;
+        filter: blur(80px);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 70px;
+        flex-wrap: wrap;
+        padding-top: 100px;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 320px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 10px 18px;
+        background: white;
+        color: #2563eb;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+        margin-bottom: 25px;
+      }
+
+      .hero-text h1 {
+        font-size: 76px;
+        line-height: 1.1;
+        margin-bottom: 22px;
+      }
+
+      .hero-text h1 span {
+        color: #2563eb;
+      }
+
+      .hero-text p {
+        color: #475569;
+        font-size: 18px;
+        max-width: 650px;
+        margin-bottom: 35px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 15px 28px;
+        border-radius: 16px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
+        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-5px);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: #0f172a;
+        border: 1px solid #dbeafe;
+      }
+
+      .btn-secondary:hover {
+        background: #f1f5f9;
+      }
+
+      .hero-image {
+        width: 370px;
+        position: relative;
+      }
+
+      .avatar {
+        border-radius: 32px;
+        border: 6px solid white;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+      }
+
+      /* ===== SECTION ===== */
+
+      section {
+        padding: 110px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 18px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: #64748b;
+        max-width: 720px;
+        margin: auto;
+        margin-bottom: 70px;
+      }
+
+      /* ===== STATS ===== */
+
+      .stats {
+        margin-top: -60px;
+        position: relative;
+        z-index: 100;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: 28px;
+        padding: 35px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+      }
+
+      .stat-card h2 {
+        font-size: 42px;
+        color: #2563eb;
+      }
+
+      .stat-card p {
+        color: #64748b;
+      }
+
+      /* ===== ABOUT ===== */
+
+      .about-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .about-card {
+        background: white;
+        border-radius: 30px;
+        padding: 40px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      }
+
+      .about-card h3 {
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .about-card p {
         color: #475569;
       }
 
-      .project-body li {
+      .info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .info-item {
+        background: #f8fafc;
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .info-item strong {
+        color: #2563eb;
+      }
+
+      /* ===== SKILLS ===== */
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      .skill-card {
+        background: white;
+        padding: 35px;
+        border-radius: 28px;
+        border: 1px solid #e2e8f0;
+        transition: 0.3s;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      }
+
+      .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+      }
+
+      .skill-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-bottom: 22px;
+      }
+
+      .skill-card h3 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      .skill-card p {
+        color: #64748b;
+      }
+
+      /* ===== PROJECTS ===== */
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 35px;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 32px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        transition: 0.35s;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+      }
+
+      .project-image {
+        height: 260px;
+        overflow: hidden;
+      }
+
+      .project-image img {
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.08);
+      }
+
+      .project-content {
+        padding: 32px;
+      }
+
+      .project-date {
+        display: inline-block;
+        background: #dbeafe;
+        color: #2563eb;
+        padding: 8px 16px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+        font-size: 14px;
+      }
+
+      .project-content h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      .project-content p {
+        color: #475569;
+        margin-bottom: 22px;
+      }
+
+      .project-content ul {
+        padding-left: 20px;
+        color: #64748b;
+      }
+
+      .project-content li {
         margin-bottom: 10px;
       }
 
-      footer {
-        padding: 35px;
-        text-align: center;
-        color: #64748b;
-        font-size: 15px;
+      /* ===== TIMELINE ===== */
+
+      .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
       }
 
-      @media (max-width: 768px) {
-        .hero {
-          padding: 40px 25px;
-        }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: #bfdbfe;
+      }
 
-        section {
-          padding: 40px 25px;
-        }
+      .timeline-item {
+        width: 50%;
+        padding: 25px 40px;
+        position: relative;
+      }
 
-        .hero-text h1 {
-          font-size: 36px;
-        }
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+      }
 
-        .hero-text h2 {
-          font-size: 18px;
-        }
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
 
-        .info-grid {
+      .timeline-box {
+        background: white;
+        padding: 30px;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      }
+
+      .timeline-box h3 {
+        margin-bottom: 10px;
+      }
+
+      .timeline-box p {
+        color: #64748b;
+      }
+
+      /* ===== CONTACT ===== */
+
+      .contact-box {
+        background: linear-gradient(135deg, #2563eb, #8b5cf6);
+        border-radius: 36px;
+        padding: 80px 40px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 25px 50px rgba(59, 130, 246, 0.18);
+      }
+
+      .contact-box h2 {
+        font-size: 50px;
+        margin-bottom: 18px;
+      }
+
+      .contact-box p {
+        max-width: 750px;
+        margin: auto;
+        margin-bottom: 40px;
+        opacity: 0.95;
+      }
+
+      .contact-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      .contact-item {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 16px 24px;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+      }
+
+      /* ===== FOOTER ===== */
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: #64748b;
+      }
+
+      /* ===== RESPONSIVE ===== */
+
+      @media (max-width: 992px) {
+        .about-wrapper {
           grid-template-columns: 1fr;
         }
 
-        .section-title {
-          font-size: 26px;
+        .timeline::before {
+          left: 20px;
         }
 
-        .project-header h3 {
-          font-size: 22px;
+        .timeline-item {
+          width: 100%;
+          padding-left: 60px;
+          padding-right: 0;
+          text-align: left !important;
+          left: 0 !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-text h1 {
+          font-size: 54px;
+        }
+
+        .section-title {
+          font-size: 38px;
+        }
+
+        .hero-content {
+          text-align: center;
+          justify-content: center;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .contact-box h2 {
+          font-size: 36px;
         }
       }
     </style>
   </head>
+
   <body>
-    <div class="container">
-      <header class="hero">
-        <div class="hero-content">
-          <img class="avatar" src="avt.png" alt="avatar" />
+    <!-- NAVBAR -->
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">TAI.</div>
 
-          <div class="hero-text">
-            <h1>Hồ Văn Tài</h1>
-            <h2>Backend Developer Intern</h2>
+        <div class="nav-links">
+          <a href="#">Trang chủ</a>
+          <a href="#about">Giới thiệu</a>
+          <a href="#skills">Kỹ năng</a>
+          <a href="#projects">Dự án</a>
+          <a href="#contact">Liên hệ</a>
+        </div>
+      </div>
+    </nav>
 
-            <div class="info-grid">
-              <div>📞 0395949070</div>
-              <div>📅 07/05/2005</div>
-              <div>✉️ mojanghvt@gmail.com</div>
-              <div>📍 Đồng Tháp</div>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="badge">Backend Developer Intern</div>
+
+          <h1>
+            Xin chào, tôi là <br />
+            <span>Hồ Văn Tài</span>
+          </h1>
+
+          <p>
+            Sinh viên Công nghệ thông tin với định hướng trở thành Backend
+            Developer chuyên nghiệp. Yêu thích xây dựng website, RESTful API và
+            phát triển hệ thống bằng ASP.NET Core.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary"> Xem dự án </a>
+
+            <a href="#contact" class="btn btn-secondary"> Liên hệ </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="avt2.png" class="avatar" alt="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h2>3+</h2>
+            <p>Dự án cá nhân</p>
+          </div>
+
+          <div class="stat-card">
+            <h2>10+</h2>
+            <p>Công nghệ đã học</p>
+          </div>
+
+          <div class="stat-card">
+            <h2>2+</h2>
+            <p>Năm học lập trình</p>
+          </div>
+
+          <div class="stat-card">
+            <h2>100%</h2>
+            <p>Sẵn sàng học hỏi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Giới Thiệu</h2>
+
+        <p class="section-subtitle">
+          Tôi luôn cố gắng nâng cao kỹ năng lập trình, học hỏi công nghệ mới và
+          xây dựng các dự án thực tế để phát triển bản thân.
+        </p>
+
+        <div class="about-wrapper">
+          <div class="about-card">
+            <h3>Mục Tiêu Nghề Nghiệp</h3>
+
+            <p>
+              Mong muốn được làm việc trong môi trường chuyên nghiệp với vị trí
+              thực tập sinh Backend Developer để học hỏi kinh nghiệm thực tế,
+              nâng cao kỹ năng phát triển hệ thống và tư duy giải quyết vấn đề.
+            </p>
+
+            <br />
+
+            <p>
+              Trong tương lai, tôi hướng đến việc trở thành Backend Developer
+              chuyên nghiệp có khả năng xây dựng hệ thống ổn định, tối ưu và
+              hiệu quả.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3>Thông Tin Cá Nhân</h3>
+
+            <div class="info-list">
+              <div class="info-item">
+                <strong>Họ và tên:</strong>
+                Hồ Văn Tài
+              </div>
+
+              <div class="info-item">
+                <strong>Ngày sinh:</strong>
+                07/05/2005
+              </div>
+
+              <div class="info-item">
+                <strong>Email:</strong>
+                mojanghvt@gmail.com
+              </div>
+
+              <div class="info-item">
+                <strong>Số điện thoại:</strong>
+                0395949070
+              </div>
+
+              <div class="info-item">
+                <strong>Địa chỉ:</strong>
+                Đồng Tháp, Việt Nam
+              </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section>
-        <h2 class="section-title">Mục Tiêu Nghề Nghiệp</h2>
-
-        <p class="career-text">
-          Mục tiêu của tôi là được làm việc trong môi trường thực tế với vị trí
-          thực tập sinh lập trình C#/.NET, áp dụng kiến thức đã học vào các dự
-          án thực tế, đồng thời nâng cao kỹ năng lập trình, tư duy giải quyết
-          vấn đề và làm việc nhóm. Trong tương lai, tôi mong muốn trở thành một
-          Backend Developer chuyên nghiệp.
-        </p>
-      </section>
-
-      <section>
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
         <h2 class="section-title">Kỹ Năng</h2>
+
+        <p class="section-subtitle">
+          Những công nghệ và công cụ tôi đã sử dụng trong quá trình học tập và
+          xây dựng dự án cá nhân.
+        </p>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <h3>Ngôn ngữ lập trình</h3>
-            <p>C#, JavaScript, TypeScript</p>
+            <div class="skill-icon">💻</div>
+
+            <h3>Programming</h3>
+
+            <p>
+              C#, JavaScript, TypeScript và kiến thức lập trình hướng đối tượng.
+            </p>
           </div>
 
           <div class="skill-card">
-            <h3>Framework & Runtime</h3>
-            <p>ASP.NET Core (Web API), Entity Framework Core</p>
+            <div class="skill-icon">⚙️</div>
+
+            <h3>Backend</h3>
+
+            <p>ASP.NET Core, Entity Framework Core, xây dựng RESTful API.</p>
           </div>
 
           <div class="skill-card">
-            <h3>Cơ sở dữ liệu</h3>
-            <p>SQL Server, MySQL</p>
+            <div class="skill-icon">🗄️</div>
+
+            <h3>Database</h3>
+
+            <p>SQL Server, MySQL, thiết kế và quản lý cơ sở dữ liệu.</p>
           </div>
 
           <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+
+            <h3>Frontend</h3>
+
+            <p>HTML, CSS, JavaScript, responsive design và UI cơ bản.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🔗</div>
+
             <h3>API</h3>
-            <p>RESTful API, WebSocket cơ bản</p>
+
+            <p>HTTP, JSON, JWT Authentication, CRUD API và xử lý dữ liệu.</p>
           </div>
 
           <div class="skill-card">
-            <h3>Authentication</h3>
-            <p>JWT, OAuth2 cơ bản</p>
-          </div>
+            <div class="skill-icon">🛠️</div>
 
-          <div class="skill-card">
-            <h3>Version Control</h3>
-            <p>Git, GitHub, GitLab</p>
+            <h3>Tools</h3>
+
+            <p>Git, GitHub, Visual Studio, VS Code và Postman.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
         <h2 class="section-title">Dự Án Cá Nhân</h2>
 
-        <div class="projects">
-          <div class="project-card">
-            <div class="project-header blue">
-              <div>
-                <h3>Website Studio Photo</h3>
-                <p>Vai trò: Backend Developer</p>
-              </div>
+        <p class="section-subtitle">
+          Một số dự án cá nhân tôi đã thực hiện để luyện tập kỹ năng thiết kế,
+          phát triển hệ thống và xây dựng giao diện web.
+        </p>
 
-              <div class="date">08/2024 - 09/2024</div>
+        <div class="projects-grid">
+          <!-- PROJECT -->
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                alt=""
+              />
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
+              <div class="project-date">08/2024 - 09/2024</div>
+
+              <h3>Website Studio Photo</h3>
+
               <p>
-                <strong>Công nghệ:</strong> ASP.NET Core, HTML, CSS, JavaScript
+                Website giới thiệu dịch vụ studio chụp ảnh với giao diện hiện
+                đại, responsive và tối ưu trải nghiệm người dùng.
               </p>
 
               <ul>
-                <li>Xây dựng website giới thiệu dịch vụ studio chụp ảnh</li>
-                <li>Thiết kế giao diện responsive cho nhiều thiết bị</li>
-                <li>
-                  Xây dựng backend xử lý dữ liệu và kết nối frontend/backend
-                </li>
-                <li>Tối ưu hiển thị nội dung và trải nghiệm người dùng</li>
+                <li>Thiết kế giao diện hiện đại</li>
+                <li>Responsive cho nhiều thiết bị</li>
+                <li>Xây dựng frontend và backend</li>
+                <li>Tối ưu UI/UX và hiệu ứng</li>
               </ul>
             </div>
           </div>
 
+          <!-- PROJECT -->
           <div class="project-card">
-            <div class="project-header purple">
-              <div>
-                <h3>Hệ Thống Quản Lý Sinh Viên</h3>
-                <p>Vai trò: Backend Developer</p>
-              </div>
-
-              <div class="date">04/2025 - 05/2025</div>
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop"
+                alt=""
+              />
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
+              <div class="project-date">04/2025 - 05/2025</div>
+
+              <h3>Quản Lý Sinh Viên</h3>
+
               <p>
-                <strong>Công nghệ:</strong> ASP.NET Core, SQL Server, Entity
-                Framework Core
+                Hệ thống quản lý sinh viên với chức năng CRUD và xử lý dữ liệu
+                bằng ASP.NET Core và SQL Server.
               </p>
 
               <ul>
-                <li>
-                  Xây dựng hệ thống quản lý thông tin sinh viên và môn học
-                </li>
-                <li>Phát triển chức năng thêm, sửa, xóa và tìm kiếm dữ liệu</li>
-                <li>
-                  Thiết kế RESTful API xử lý dữ liệu giữa frontend và backend
-                </li>
-                <li>
-                  Kết nối cơ sở dữ liệu SQL Server bằng Entity Framework Core
-                </li>
+                <li>Xây dựng RESTful API</li>
+                <li>Kết nối SQL Server</li>
+                <li>Tìm kiếm và lọc dữ liệu</li>
+                <li>Thiết kế hệ thống backend</li>
               </ul>
             </div>
           </div>
 
+          <!-- PROJECT -->
           <div class="project-card">
-            <div class="project-header orange">
-              <div>
-                <h3>Website Bán Linh Kiện Máy Tính</h3>
-                <p>Vai trò: Backend Developer</p>
-              </div>
-
-              <div class="date">02/2026 - 04/2026</div>
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1200&auto=format&fit=crop"
+                alt=""
+              />
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
+              <div class="project-date">02/2026 - 04/2026</div>
+
+              <h3>Website Bán Linh Kiện</h3>
+
               <p>
-                <strong>Công nghệ:</strong> ASP.NET Core, SQL Server, Entity
-                Framework Core
+                Website quản lý và hiển thị sản phẩm linh kiện máy tính với hệ
+                thống backend xử lý dữ liệu.
               </p>
 
               <ul>
-                <li>Xây dựng website quản lý và hiển thị sản phẩm</li>
-                <li>Thiết kế RESTful API và chức năng CRUD dữ liệu</li>
-                <li>Kết nối SQL Server bằng Entity Framework Core</li>
-                <li>Xử lý request/response bằng HTTP và JSON</li>
+                <li>Thiết kế API sản phẩm</li>
+                <li>CRUD dữ liệu</li>
+                <li>Kết nối cơ sở dữ liệu</li>
+                <li>Xử lý request và response</li>
               </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer>© 2026 Hồ Văn Tài - Backend Developer Portfolio</footer>
-    </div>
+    <!-- TIMELINE -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Hành Trình Học Tập</h2>
+
+        <p class="section-subtitle">
+          Quá trình học tập và phát triển kỹ năng lập trình của tôi.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-box">
+              <h3>2023</h3>
+
+              <p>
+                Bắt đầu học ngành Công nghệ thông tin tại Đại học Nam Cần Thơ.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-box">
+              <h3>2024</h3>
+
+              <p>Học HTML, CSS, JavaScript và xây dựng website đầu tiên.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-box">
+              <h3>2025</h3>
+
+              <p>Học ASP.NET Core, RESTful API và Entity Framework Core.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-box">
+              <h3>2026</h3>
+
+              <p>
+                Xây dựng các dự án backend thực tế và tìm kiếm cơ hội thực tập.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Liên Hệ Với Tôi</h2>
+
+          <p>
+            Tôi đang tìm kiếm cơ hội thực tập Backend Developer để học hỏi, phát
+            triển kỹ năng và tham gia vào các dự án thực tế.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-item">📞 0395949070</div>
+
+            <div class="contact-item">✉️ mojanghvt@gmail.com</div>
+
+            <div class="contact-item">📍 Đồng Tháp, Việt Nam</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>© 2026 Hồ Văn Tài - Backend Developer Portfolio</footer>
   </body>
 </html>
